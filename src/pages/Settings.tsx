@@ -1,4 +1,5 @@
-import { Divider, Radio, Toggle } from "react-daisyui";
+import { useState } from "react";
+import { Divider, Select, Toggle } from "react-daisyui";
 
 const SettingsStyle = `
     w-11/12
@@ -11,6 +12,9 @@ const SettingsStyle = `
 `;
 
 const Settings = () => {
+
+    const [theme, setTheme] = useState<string>('Dark');
+
     return (
         <div className={SettingsStyle}>
             <h1 className="font-bold text-3xl">Settings</h1>
@@ -56,6 +60,9 @@ const Settings = () => {
                         <h3 className="font-bold text-xl mt-2">
                             Email Notifications
                         </h3>
+                        <span className="text-sm">
+                            You will get email when any of the selected happens
+                        </span>
                         <div className="flex flex-row content-center gap-3">
                             <Toggle
                                 className="self-center"
@@ -87,8 +94,22 @@ const Settings = () => {
                 </div>
                 <div className="w-1/2 py-2 px-4 border rounded-md">
                     <h2 className="font-bold text-2xl">Account</h2>
+
+                    <div className="mt-4">
+                        <h3 className="font-bold text-xl">Theme</h3>
+                        <Select value={theme} onChange={(event) => setTheme(event.target.value)}>
+                            <option value={"Dark"} disabled={theme == "Dark"}>Dark</option>
+                            <option value={"Light"} disabled={theme == "Light"}>Light</option>
+                        </Select>
+                    </div>
+
+                    <Divider />
+
                     <div className="mt-4">
                         <h3 className="font-bold text-xl">Visibility</h3>
+                        <span className="text-sm">
+                            Choose who can see your status
+                        </span>
                         <div className="flex flex-row content-center gap-3">
                             <Toggle
                                 className="self-center"

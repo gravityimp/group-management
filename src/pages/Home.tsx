@@ -5,10 +5,10 @@ import TasksSingle from "./Tasks/TasksSingle";
 
 const Home = () => (
     <>
-        {/* <TasksSingle/> */}
+        <TasksSingle/>
         {/* <Groups/> */}
         {/* <CalendarPage/> */}
-        <Settings/>
+        {/* <Settings/> */}
     </>
 );
 

@@ -1,4 +1,4 @@
-import { Button } from "react-daisyui";
+import { Button, Divider } from "react-daisyui";
 
 interface TasksSingleProps {}
 
@@ -17,7 +17,7 @@ const TasksSingle = () => {
         <div className={TasksStyle}>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col">
-                    <h2 className="font-bold text-4xl">Task 1</h2>
+                    <h1 className="font-bold text-4xl">Task 1</h1>
                     <div>
                         <span>Subject 1</span>
                         <span className="mx-3"></span>
@@ -53,6 +53,11 @@ const TasksSingle = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <Divider />
+            <div className="">
+                <h2 className="font-bold text-3xl">Results</h2>
+                <span className="text-xl">You have not turned in the task yet!</span>
             </div>
         </div>
     );
