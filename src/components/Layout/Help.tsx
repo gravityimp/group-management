@@ -9,15 +9,15 @@ const Help = () => {
                 id="Capa_1"
                 viewBox="0 0 318.293 318.293"
                 stroke="#000000"
-                stroke-width="0.0031829300000000005"
+                strokeWidth="0.0031829300000000005"
             >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                     id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     stroke="#CCCCCC"
-                    stroke-width="0.6365860000000001"
+                    strokeWidth="0.6365860000000001"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                     {" "}
