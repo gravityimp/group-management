@@ -30,7 +30,7 @@ const Settings = () => {
                                 size="sm"
                                 defaultChecked
                             />
-                            <span className="text-lg">Everyone</span>
+                            <span className="text-lg">Groups</span>
                         </div>
                         <div className="flex flex-row content-center gap-3">
                             <Toggle
@@ -39,12 +39,23 @@ const Settings = () => {
                                 size="sm"
                                 defaultChecked
                             />
-                            <span className="text-lg">People in my groups</span>
+                            <span className="text-lg">Tasks</span>
+                        </div>
+                        <div className="flex flex-row content-center gap-3">
+                            <Toggle
+                                className="self-center"
+                                color="primary"
+                                size="sm"
+                                defaultChecked
+                            />
+                            <span className="text-lg">Events</span>
                         </div>
 
                         <Divider />
 
-                        <h3 className="font-bold text-xl mt-2">Email Notifications</h3>
+                        <h3 className="font-bold text-xl mt-2">
+                            Email Notifications
+                        </h3>
                         <div className="flex flex-row content-center gap-3">
                             <Toggle
                                 className="self-center"
@@ -78,25 +89,25 @@ const Settings = () => {
                     <h2 className="font-bold text-2xl">Account</h2>
                     <div className="mt-4">
                         <h3 className="font-bold text-xl">Visibility</h3>
-                        <div className="flex flex-row content-center">
-                            <span className="text-lg mr-3">Everyone</span>
+                        <div className="flex flex-row content-center gap-3">
                             <Toggle
                                 className="self-center"
                                 color="primary"
                                 size="sm"
                                 defaultChecked
                             />
+                            <span className="text-lg mr-3">Everyone</span>
                         </div>
-                        <div className="flex flex-row content-center">
+                        <div className="flex flex-row content-center gap-3">
+                            <Toggle
+                                className="self-center"
+                                color="primary"
+                                size="sm"
+                                defaultChecked
+                            />
                             <span className="text-lg mr-3">
                                 People in my groups
                             </span>
-                            <Toggle
-                                className="self-center"
-                                color="primary"
-                                size="sm"
-                                defaultChecked
-                            />
                         </div>
                     </div>
                 </div>
