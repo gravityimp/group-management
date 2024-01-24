@@ -7,6 +7,8 @@ const GroupsStyle = `
     lg:grid-cols-5
     lg:grid-rows-1
     lg:gap-4
+    mt-4
+    mb-8
 `;
 
 const Groups = () => {

@@ -1,9 +1,14 @@
 import CalendarPage from "./Calendars/CalendarPage";
+import Groups from "./Groups/Groups";
+import Settings from "./Settings";
+import TasksSingle from "./Tasks/TasksSingle";
 
 const Home = () => (
     <>
-        To be developed...
-        <CalendarPage/>
+        {/* <TasksSingle/> */}
+        {/* <Groups/> */}
+        {/* <CalendarPage/> */}
+        <Settings/>
     </>
 );
 

@@ -6,8 +6,10 @@ const TasksStyle = `
     w-11/12
     flex
     flex-col
-    justiffy-center
+    justify-center
     mx-auto
+    mt-4
+    mb-8
 `;
 
 const TasksSingle = () => {
