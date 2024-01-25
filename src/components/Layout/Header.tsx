@@ -1,4 +1,4 @@
-import {Badge, Button, Divider, Dropdown, Indicator, Menu, Navbar} from "react-daisyui";
+import {Badge, Button, Divider, Dropdown, Menu, Navbar} from "react-daisyui";
 import {NavLink} from "react-router-dom";
 import groups from "../../data/groups.json"
 
@@ -20,7 +20,7 @@ const Header = () => (
                     <li>
                         <a>Groups</a>
                         <ul className="p-2">
-                            {groups.filter(group => group.member === true).map((group) => (
+                            {groups.filter(group => group.joined === true).map((group) => (
                                 <li><NavLink to={`/groups/${group.id}`}>{group.shortName}</NavLink></li>
                             ))}
                             <Divider/>
@@ -41,7 +41,7 @@ const Header = () => (
                     <details>
                         <summary>Groups</summary>
                         <ul className="p-2">
-                            {groups.filter(group => group.member === true).map((group) => (
+                            {groups.filter(group => group.joined === true).map((group) => (
                                 <Menu.Item><NavLink to={`/groups/${group.id}`}>{group.shortName}</NavLink></Menu.Item>
                             ))}
                             <Divider/>

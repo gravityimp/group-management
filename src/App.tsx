@@ -4,6 +4,7 @@ import Groups from "./pages/Groups/Groups.tsx";
 import CalendarPage from "./pages/Calendars/CalendarPage.tsx";
 import TasksSingle from "./pages/Tasks/TasksSingle.tsx";
 import Settings from "./pages/Settings.tsx";
+import GroupSingle from "./pages/Groups/GroupSingle.tsx";
 
 const App = () => {
     const router = createBrowserRouter([
@@ -21,7 +22,7 @@ const App = () => {
         },
         {
             path: "/groups/:id",
-            element: <Home/>
+            element: <GroupSingle/>
         },
         {
             path: "/groups/add",

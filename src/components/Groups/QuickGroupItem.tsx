@@ -12,7 +12,7 @@ interface QuickGroupProps {
     isAdmin: boolean;
 }
 
-const QuickGroup: FunctionComponent<QuickGroupProps> = (props) => {
+const QuickGroupItem: FunctionComponent<QuickGroupProps> = (props) => {
     const { id, title, isAdmin } = props;
     return (
         <Menu.Item className={QuickGroupStyle}>
@@ -24,4 +24,4 @@ const QuickGroup: FunctionComponent<QuickGroupProps> = (props) => {
     )
 }
 
-export default QuickGroup;
+export default QuickGroupItem;

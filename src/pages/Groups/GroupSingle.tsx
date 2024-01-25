@@ -1,12 +1,24 @@
-import {NavLink} from "react-router-dom";
-import {Breadcrumbs, Button, Input, Join, Menu} from "react-daisyui";
-import {HomeIcon, MagnifyingGlassIcon, PlusIcon, UserGroupIcon} from "@heroicons/react/24/outline";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
+import {Breadcrumbs, Button, Menu} from "react-daisyui";
+import {HomeIcon,  PlusIcon, UserGroupIcon, UserIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
-import Group from "../../components/Groups/Group";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
 import groups from "../../data/groups.json"
+import GroupMemberItem from "../../components/Groups/GroupMemberItem.tsx";
 
 const Groups = () => {
+    const navigate = useNavigate()
+    const { id } = useParams();
+    let numericId: number;
+    if (isNaN(Number(id))) {
+        navigate("/groups");
+        return null;
+    } else {
+        numericId = Number(id);
+    }
+
+    const group = groups[numericId - 1];
+
     return (
         <Layout>
             <div>
@@ -21,22 +33,20 @@ const Groups = () => {
                             <UserGroupIcon className="w-4 h-4 mr-2 stroke-current" /> Groups
                         </NavLink>
                     </Breadcrumbs.Item>
+                    <Breadcrumbs.Item>
+                        <NavLink to={"/groups"}>
+                            <UserIcon className="w-4 h-4 mr-2 stroke-current" /> {group.shortName}
+                        </NavLink>
+                    </Breadcrumbs.Item>
                 </Breadcrumbs>
-                <div className="prose mt-4 mb-8"><h1>Groups</h1></div>
-                <Join className="w-full pb-4">
-                    <div className="w-full">
-                        <div className="w-full">
-                            <Input className="join-item w-full" placeholder="Search..."/>
-                        </div>
-                    </div>
-                    <Button className="join-item">
-                        <MagnifyingGlassIcon className="w-4 h-4 mr-1 stroke-current" /> Search
-                    </Button>
-                </Join>
+                <div className="prose mt-4 mb-8 max-w-full">
+                    <h1>{group.longName}</h1>
+                    <p>{group.description}</p>
+                    <h2>Members</h2>
+                </div>
                 <div className="grid grid-cols-3 gap-4">
-                    {groups.map((group) => (
-                        <Group key={group.id} id={group.id} title={group.longName} isMember={group.joined}
-                               isAdmin={group.admin}/>
+                    {group.members.map((member) => (
+                        <GroupMemberItem key={member.id} id={member.id} name={member.name} avatar={member.avatar}/>
                     ))}
                 </div>
             </div>

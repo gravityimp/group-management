@@ -3,7 +3,10 @@ import CalendarDateButton from "../../components/Calendars/CalendarDateButton.ts
 import Layout from "../../components/Layout/Layout.tsx";
 import events from "../../data/events.json"
 import CalendarEvent from "../../components/Calendars/CalendarEvent.tsx";
-import {Timeline} from "react-daisyui";
+import {Button, Menu, Timeline} from "react-daisyui";
+import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
+import {NavLink} from "react-router-dom";
+import {PlusIcon} from "@heroicons/react/24/outline";
 
 const CalendarPageStyle = `
     w-11/12
@@ -50,6 +53,7 @@ const CalendarPage = () => {
 
     return (
         <Layout className={CalendarPageStyle}>
+            <div>
             <div>
                 <h2 className="font-bold text-2xl">January 26</h2>
                 <Timeline vertical={true}>
@@ -102,6 +106,15 @@ const CalendarPage = () => {
                     );
                 })}
             </div>
+            </div>
+            <Menu>
+                <QuickGroupList/>
+                <NavLink to={"/events/add"}>
+                    <Button color="accent" fullWidth={true}>
+                        <PlusIcon className="w-4 h-4 mr-1 stroke-current" /> Create event
+                    </Button>
+                </NavLink>
+            </Menu>
         </Layout>
     );
 };

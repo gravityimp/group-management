@@ -20,12 +20,19 @@ const CalendarEvent: FunctionComponent<CalendarEventProps> = (props) => {
             <div className="my-2 flex gap-2">
                 {eventType === "tasks" ? (
                         !done ?
-                            <Button tag={NavLink} to={`/${eventType}/${eventId}`} color="accent">Mark as
-                                Done</Button>
+                            <Button color="accent">
+                                <NavLink to={`/${eventType}/${eventId}`}>
+                                    Mark as Done
+                                </NavLink>
+                            </Button>
                             : <Button animation={false} color="neutral">Done</Button>
                     )
                     : ''}
-                <Button tag={NavLink} to={`/${eventType}/${eventId}`} wide={true} color="primary">View</Button>
+                <Button wide={true} color="primary">
+                    <NavLink to={`/${eventType}/${eventId}`}>
+                        View
+                    </NavLink>
+                </Button>
             </div>
         </Timeline.End>
     </Timeline.Item>

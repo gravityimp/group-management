@@ -1,58 +1,452 @@
 [
   {
     "id": 1,
-    "shortName": "Group 1",
-    "longName": "Group 1",
+    "shortName": "Mgr Inf 2023",
+    "longName": "Informatyka 2023 (magisterska)",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": true,
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
     "admin": true
   },
   {
     "id": 2,
-    "shortName": "Group 2",
-    "longName": "Group 2",
+    "shortName": "WOiSI 2.5",
+    "longName": "Grupa WOiSI 2.5 Politechnika Lubelska",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": false,
-    "admin": false
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
+    "admin": true
   },
   {
     "id": 3,
-    "shortName": "Group 3",
-    "longName": "Group 3",
+    "shortName": "Bezpieczeństwo aplikacji",
+    "longName": "Bezpieczeństwo aplikacji internetowych",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": true,
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
     "admin": false
   },
   {
     "id": 4,
-    "shortName": "Group 4",
-    "longName": "Group 4",
+    "shortName": "JEE",
+    "longName": "Programowanie aplikacji internetowych w JEE",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": true,
-    "admin": true
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": false,
+    "admin": false
   },
   {
     "id": 5,
-    "shortName": "Group 5",
-    "longName": "Group 5",
+    "shortName": "PL/SQL",
+    "longName": "Programowanie aplikacji w języku PL/SQL",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": false,
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": false,
     "admin": false
   },
   {
     "id": 6,
-    "shortName": "Group 6",
-    "longName": "Group 6",
+    "shortName": "Full-stack",
+    "longName": "Programowanie full-stack w chmurze obliczeniowej",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": false,
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
     "admin": false
   },
   {
     "id": 7,
-    "shortName": "Group 7",
-    "longName": "Group 7",
+    "shortName": "Proj uniwersalne",
+    "longName": "Projektowanie uniwersalne w informatyce",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "member": true,
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
+    "admin": false
+  },
+  {
+    "id": 8,
+    "shortName": "Android",
+    "longName": "Zaawansowane programowanie aplikacji mobilnych na platformę Android",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
+    "admin": false
+  },
+  {
+    "id": 9,
+    "shortName": "Python",
+    "longName": "Zaawansowane programowanie w języku Python",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": true,
+    "admin": false
+  },
+  {
+    "id": 10,
+    "shortName": "Swift",
+    "longName": "Zaawansowane programowanie w Swift",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "members": [
+      {
+        "id": 1,
+        "name": "Rachel Heller",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/535.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Furman Lubowitz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Donnie Herman",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Sporer",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/218.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Elton Kreiger",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1126.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Halle Metz",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/112.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Alva Oberbrunner",
+        "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/429.jpg"
+      }
+    ],
+    "joined": false,
     "admin": false
   }
 ]
