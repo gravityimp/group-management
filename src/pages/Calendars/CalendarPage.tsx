@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import CalendarDateButton from "../../components/Calendars/CalendarDateButton.tsx";
-import { Button } from "react-daisyui";
 import Layout from "../../components/Layout/Layout.tsx";
+import events from "../../data/events.json"
+import CalendarEvent from "../../components/Calendars/CalendarEvent.tsx";
+import {Timeline} from "react-daisyui";
 
 const CalendarPageStyle = `
     w-11/12
@@ -47,9 +49,17 @@ const CalendarPage = () => {
     }
 
     return (
-        <Layout>
-        <div className={CalendarPageStyle}>
-            <div className="flex flex-row justify-between">
+        <Layout className={CalendarPageStyle}>
+            <div>
+                <h2 className="font-bold text-2xl">January 26</h2>
+                <Timeline vertical={true}>
+                    {events.filter(event => event.day === "January 26").map((event) => (
+                        <CalendarEvent name={event.name} eventType={event.eventType} eventId={event.eventId}
+                                       time={event.time} done={event.done}/>
+                    ))}
+                </Timeline>
+            </div>
+            <div className="flex flex-row justify-between mt-8">
                 <a
                     href="#"
                     className="text-xl hover:underline"
@@ -69,13 +79,13 @@ const CalendarPage = () => {
                 </a>
             </div>
             <div className="grid grid-cols-7 grid-rows-6 gap-3 w-2/5 mx-auto mt-8">
-                <CalendarDateButton content="M" isDay={false} />
-                <CalendarDateButton content="T" isDay={false} />
-                <CalendarDateButton content="W" isDay={false} />
-                <CalendarDateButton content="T" isDay={false} />
-                <CalendarDateButton content="F" isDay={false} />
-                <CalendarDateButton content="S" isDay={false} />
-                <CalendarDateButton content="S" isDay={false} />
+                <CalendarDateButton content="M" isDay={false}/>
+                <CalendarDateButton content="T" isDay={false}/>
+                <CalendarDateButton content="W" isDay={false}/>
+                <CalendarDateButton content="T" isDay={false}/>
+                <CalendarDateButton content="F" isDay={false}/>
+                <CalendarDateButton content="S" isDay={false}/>
+                <CalendarDateButton content="S" isDay={false}/>
 
                 {days.map((day, idx) => {
                     return day == null ? (
@@ -92,40 +102,7 @@ const CalendarPage = () => {
                     );
                 })}
             </div>
-            <div className="mt-8">
-                <h2 className="font-bold text-2xl">January 26</h2>
-                <div className="mt-3">
-                    <h3 className="font-bold text-xl">Subject 1<span className="text-sm ml-4">10:00 - 12:00</span></h3>
-                    <Button wide={true} className="text-xl my-2">View</Button>
-                </div>
-                <div className="mt-3">
-                    <h3 className="font-bold text-xl">Subject 2<span className="text-sm ml-4">12:00 - 14:00</span></h3>
-                    <Button wide={true} className="text-xl my-2">View</Button>
-                </div>
-                <div className="mt-3">
-                    <h3 className="font-bold text-xl">Task 1<span className="text-sm ml-4">23:59</span></h3>
-                    <div className="flex flex-row gap-2">
-                    <Button className="text-lg my-2">Mark as Done</Button>
-                    <Button className="text-lg my-2">View</Button>
-                    </div>
-                </div>
-                <div className="mt-3">
-                    <h3 className="font-bold text-xl">Task 1<span className="text-sm ml-4">23:59</span></h3>
-                    <div className="flex flex-row gap-2">
-                    <Button className="text-lg my-2">Mark as Done</Button>
-                    <Button className="text-lg my-2">View</Button>
-                    </div>
-                </div>
-                <div className="mt-3">
-                    <h3 className="font-bold text-xl">Task 1<span className="text-sm ml-4">23:59</span></h3>
-                    <div className="flex flex-row gap-2">
-                    <Button className="text-lg my-2">Mark as Done</Button>
-                    <Button className="text-lg my-2">View</Button>
-                    </div>
-                </div>
-            </div>
-        </div>
-            </Layout>
+        </Layout>
     );
 };
 

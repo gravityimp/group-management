@@ -1,20 +1,26 @@
-import { Badge } from "react-daisyui";
+import { Badge, Menu } from "react-daisyui";
+import {FunctionComponent} from "react";
+import {NavLink} from "react-router-dom";
 
 const QuickGroupStyle= `
-    p-2
-    mx-2
-    border
-    border-transparent
-    hover:border-white
-    hover:rounded-md
+    flex
 `;
 
-const QuickGroup = () => {
+interface QuickGroupProps {
+    id: number
+    title: string;
+    isAdmin: boolean;
+}
+
+const QuickGroup: FunctionComponent<QuickGroupProps> = (props) => {
+    const { id, title, isAdmin } = props;
     return (
-        <div className={QuickGroupStyle}>
-            <span className="mr-2">Group 1</span>
-            <Badge outline={true} color="error">Admin</Badge>
-        </div>
+        <Menu.Item className={QuickGroupStyle}>
+            <NavLink to={`/groups/${id}`}>
+            <span className="mr-2">{title}</span>
+            {isAdmin ? <Badge outline={true} color="error">Admin</Badge> : ''}
+            </NavLink>
+        </Menu.Item>
     )
 }
 

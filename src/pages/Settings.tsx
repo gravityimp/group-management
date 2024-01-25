@@ -17,8 +17,7 @@ const Settings = () => {
     const [theme, setTheme] = useState<string>('Dark');
 
     return (
-        <Layout>
-        <div className={SettingsStyle}>
+        <Layout className={SettingsStyle}>
             <h1 className="font-bold text-3xl">Settings</h1>
             <Divider />
             <div className="flex flex-row gap-4 justify-between">
@@ -135,8 +134,7 @@ const Settings = () => {
                     </div>
                 </div>
             </div>
-        </div>
-            </Layout>
+        </Layout>
     );
 };
 

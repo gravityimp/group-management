@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Subject 1",
+    "eventType": "subjects",
+    "eventId": 1,
+    "day": "January 26",
+    "time": "10:00 - 12:00",
+    "done": false
+  },
+  {
+    "id": 2,
+    "name": "Subject 2",
+    "eventType": "subjects",
+    "eventId": 2,
+    "day": "January 26",
+    "time": "12:00 - 14:00",
+    "done": false
+  },
+  {
+    "id": 3,
+    "name": "Task 1",
+    "eventType": "tasks",
+    "eventId": 1,
+    "day": "January 26",
+    "time": "23:59",
+    "done": true
+  },
+  {
+    "id": 4,
+    "name": "Task 2",
+    "eventType": "tasks",
+    "eventId": 2,
+    "day": "January 26",
+    "time": "23:59",
+    "done": true
+  },
+  {
+    "id": 5,
+    "name": "Task 3",
+    "eventType": "tasks",
+    "eventId": 3,
+    "day": "January 26",
+    "time": "23:59",
+    "done": false
+  }
+]
