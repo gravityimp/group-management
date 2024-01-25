@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Divider, Select, Toggle } from "react-daisyui";
+import Layout from "../components/Layout/Layout.tsx";
 
 const SettingsStyle = `
     w-11/12
@@ -16,6 +17,7 @@ const Settings = () => {
     const [theme, setTheme] = useState<string>('Dark');
 
     return (
+        <Layout>
         <div className={SettingsStyle}>
             <h1 className="font-bold text-3xl">Settings</h1>
             <Divider />
@@ -134,6 +136,7 @@ const Settings = () => {
                 </div>
             </div>
         </div>
+            </Layout>
     );
 };
 

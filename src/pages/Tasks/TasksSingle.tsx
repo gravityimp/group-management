@@ -1,6 +1,5 @@
 import { Button, Divider } from "react-daisyui";
-
-interface TasksSingleProps {}
+import Layout from "../../components/Layout/Layout.tsx";
 
 const TasksStyle = `
     w-11/12
@@ -14,7 +13,7 @@ const TasksStyle = `
 
 const TasksSingle = () => {
     return (
-        <div className={TasksStyle}>
+        <Layout><div className={TasksStyle}>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col">
                     <h1 className="font-bold text-4xl">Task 1</h1>
@@ -59,7 +58,7 @@ const TasksSingle = () => {
                 <h2 className="font-bold text-3xl">Results</h2>
                 <span className="text-xl">You have not turned in the task yet!</span>
             </div>
-        </div>
+        </div></Layout>
     );
 };
 

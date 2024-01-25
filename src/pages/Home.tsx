@@ -1,15 +1,7 @@
-import CalendarPage from "./Calendars/CalendarPage";
-import Groups from "./Groups/Groups";
-import Settings from "./Settings";
-import TasksSingle from "./Tasks/TasksSingle";
+import Layout from "../components/Layout/Layout.tsx";
 
 const Home = () => (
-    <>
-        <TasksSingle/>
-        {/* <Groups/> */}
-        {/* <CalendarPage/> */}
-        {/* <Settings/> */}
-    </>
+    <Layout><p>Hello</p></Layout>
 );
 
 export default Home;

@@ -1,6 +1,7 @@
 import { Button, Divider, Input } from "react-daisyui";
 import Group from "../../components/Groups/Group";
 import QuickGroup from "../../components/Groups/QuickGroup";
+import Layout from "../../components/Layout/Layout.tsx";
 
 const GroupsStyle = `
     lg:grid
@@ -15,7 +16,7 @@ const Groups = () => {
   // TODO: Get groups from json
 
   return (
-    <div className={GroupsStyle}>
+      <Layout><div className={GroupsStyle}>
       <div className="flex flex-col p-2">
         {/* TODO: loop joined groups */}
         <QuickGroup />
@@ -38,7 +39,7 @@ const Groups = () => {
           <Group title="Group 7" isMember={true} isAdmin={false} />
         </div>
       </div>
-    </div>
+    </div></Layout>
   );
 };
 

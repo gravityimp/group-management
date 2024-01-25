@@ -1,4 +1,5 @@
 import {Badge, Button, Dropdown, Indicator, Menu, Navbar} from "react-daisyui";
+import {NavLink} from "react-router-dom";
 
 const Header = () => (
     <Navbar className="navbar bg-base-300">
@@ -10,33 +11,36 @@ const Header = () => (
                     </svg>
                 </Button>
                 <Dropdown.Menu tabIndex={0} className="w-52 menu-sm mt-3 z-[1]">
-                    <Dropdown.Item>Events</Dropdown.Item>
-                    <Dropdown.Item>Notes</Dropdown.Item>
-                    <Dropdown.Item>Tasks</Dropdown.Item>
+                    <Dropdown.Item><NavLink to={"/"}>Home</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink to={"/events"}>Events</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink to={"/notes"}>Notes</NavLink></Dropdown.Item>
+                    <Dropdown.Item><NavLink to={"/tasks"}>Tasks</NavLink></Dropdown.Item>
                     <li>
                         <a>Groups</a>
                         <ul className="p-2">
-                            <li><a>Group 1</a></li>
-                            <li><a>Group 3</a></li>
-                            <li><a>Add group</a></li>
+                            <li><NavLink to={"/groups/1"}>Group 1</NavLink></li>
+                            <li><NavLink to={"/groups/3"}>Group 3</NavLink></li>
+                            <li><NavLink to={"/groups"}>All groups</NavLink></li>
+                            <li><NavLink to={"/groups/add"}>Add group</NavLink></li>
                         </ul>
                     </li>
                 </Dropdown.Menu>
             </Dropdown>
-            <a className="btn btn-ghost text-xl">Study</a>
+            <NavLink to={"/"} className="btn btn-ghost text-xl">Study</NavLink>
         </Navbar.Start>
         <Navbar.Center className="hidden lg:flex">
             <Menu horizontal className="px-1">
-                <Menu.Item><a>Events</a></Menu.Item>
-                <Menu.Item><a>Notes</a></Menu.Item>
-                <Menu.Item><a>Tasks</a></Menu.Item>
+                <Menu.Item><NavLink to={"/events"}>Events</NavLink></Menu.Item>
+                <Menu.Item><NavLink to={"/notes"}>Notes</NavLink></Menu.Item>
+                <Menu.Item><NavLink to={"/tasks"}>Tasks</NavLink></Menu.Item>
                 <Menu.Item>
                     <details>
                         <summary>Groups</summary>
                         <ul className="p-2">
-                            <Menu.Item><a>Group 1</a></Menu.Item>
-                            <Menu.Item><a>Group 3</a></Menu.Item>
-                            <Menu.Item><a>Add group</a></Menu.Item>
+                            <Menu.Item><NavLink to={"/groups/1"}>Group 1</NavLink></Menu.Item>
+                            <Menu.Item><NavLink to={"/groups/3"}>Group 3</NavLink></Menu.Item>
+                            <Menu.Item><NavLink to={"/groups"}>All groups</NavLink></Menu.Item>
+                            <Menu.Item><NavLink to={"/groups/add"}>Add group</NavLink></Menu.Item>
                         </ul>
                     </details>
                 </Menu.Item>
@@ -60,13 +64,13 @@ const Header = () => (
             </Button>
             <Dropdown.Menu className="mt-3 z-[1] w-52 menu-sm">
                 <li>
-                    <a className="justify-between">
+                    <NavLink to={"/profile"} className="justify-between">
                         Profile
                         <Badge className="badge">New</Badge>
-                    </a>
+                    </NavLink>
                 </li>
-                <Dropdown.Item>Settings</Dropdown.Item>
-                <Dropdown.Item>Logout</Dropdown.Item>
+                <Dropdown.Item><NavLink to={"/settings"}>Settings</NavLink></Dropdown.Item>
+                <Dropdown.Item><NavLink to={"/logout"}>Logout</NavLink></Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     </Navbar>

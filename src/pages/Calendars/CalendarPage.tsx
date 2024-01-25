@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import CalendarDateButton from "../../components/Calendars/CalendarDateButton";
+import CalendarDateButton from "../../components/Calendars/CalendarDateButton.tsx";
 import { Button } from "react-daisyui";
+import Layout from "../../components/Layout/Layout.tsx";
 
 const CalendarPageStyle = `
     w-11/12
@@ -46,6 +47,7 @@ const CalendarPage = () => {
     }
 
     return (
+        <Layout>
         <div className={CalendarPageStyle}>
             <div className="flex flex-row justify-between">
                 <a
@@ -123,6 +125,7 @@ const CalendarPage = () => {
                 </div>
             </div>
         </div>
+            </Layout>
     );
 };
 
