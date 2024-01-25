@@ -1,45 +1,45 @@
 [
   {
     "id": 1,
-    "name": "Subject 1",
-    "eventType": "subjects",
-    "eventId": 1,
+    "name": "Projektowanie uniwersalne w informatyce",
+    "eventType": "groups",
+    "eventId": 7,
     "day": "January 26",
-    "time": "10:00 - 12:00",
+    "time": "08:00 - 09:30",
     "done": false
   },
   {
     "id": 2,
-    "name": "Subject 2",
-    "eventType": "subjects",
-    "eventId": 2,
+    "name": "Bezpieczeństwo aplikacji internetowych",
+    "eventType": "groups",
+    "eventId": 3,
     "day": "January 26",
-    "time": "12:00 - 14:00",
+    "time": "11:45 - 13:15",
     "done": false
   },
   {
     "id": 3,
-    "name": "Task 1",
+    "name": "Scenariusze badawcze",
     "eventType": "tasks",
     "eventId": 1,
     "day": "January 26",
-    "time": "23:59",
+    "time": "do 08:00",
     "done": true
   },
   {
     "id": 4,
-    "name": "Task 2",
+    "name": "Egzamin z bezpieczeństwa",
     "eventType": "tasks",
     "eventId": 2,
     "day": "January 26",
     "time": "23:59",
-    "done": true
+    "done": false
   },
   {
     "id": 5,
-    "name": "Task 3",
+    "name": "Be happy",
     "eventType": "tasks",
-    "eventId": 3,
+    "eventId": 10,
     "day": "January 26",
     "time": "23:59",
     "done": false

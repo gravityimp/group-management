@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
-import CalendarDateButton from "../../components/Calendars/CalendarDateButton.tsx";
-import Layout from "../../components/Layout/Layout.tsx";
-import events from "../../data/events.json"
-import CalendarEvent from "../../components/Calendars/CalendarEvent.tsx";
-import {Button, Menu, Timeline} from "react-daisyui";
-import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
+import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-import {PlusIcon} from "@heroicons/react/24/outline";
-
-const CalendarPageStyle = `
-    w-11/12
-    flex
-    flex-col
-    justify-center
-    mx-auto
-    mt-4
-    mb-8
-`;
+import {Breadcrumbs, Button, Divider, Menu, Tabs, Timeline} from "react-daisyui";
+import {CalendarIcon, HomeIcon, PlusIcon} from "@heroicons/react/24/outline";
+import Layout from "../../components/Layout/Layout.tsx";
+import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
+import CalendarDateButton from "../../components/Calendars/CalendarDateButton.tsx";
+import CalendarEvent from "../../components/Calendars/CalendarEvent.tsx";
+import events from "../../data/events.json"
 
 const CalendarPage = () => {
     const [today, setToday] = useState<Date>(new Date());
@@ -52,10 +42,21 @@ const CalendarPage = () => {
     }
 
     return (
-        <Layout className={CalendarPageStyle}>
+        <Layout>
             <div>
-            <div>
-                <h2 className="font-bold text-2xl">January 26</h2>
+                <Breadcrumbs>
+                    <Breadcrumbs.Item>
+                        <NavLink to={"/"}>
+                            <HomeIcon className="w-4 h-4 mr-2 stroke-current"/> Home
+                        </NavLink>
+                    </Breadcrumbs.Item>
+                    <Breadcrumbs.Item>
+                        <NavLink to={"/tasks"}>
+                            <CalendarIcon className="w-4 h-4 mr-2 stroke-current"/> Events
+                        </NavLink>
+                    </Breadcrumbs.Item>
+                </Breadcrumbs>
+                <div className="prose mt-4 mb-8"><h1>Events</h1><h2>January 26th</h2></div>
                 <Timeline vertical={true}>
                     {events.filter(event => event.day === "January 26").map((event) => (
                         <CalendarEvent name={event.name} eventType={event.eventType} eventId={event.eventId}
@@ -63,58 +64,54 @@ const CalendarPage = () => {
                     ))}
                 </Timeline>
             </div>
-            <div className="flex flex-row justify-between mt-8">
-                <a
-                    href="#"
-                    className="text-xl hover:underline"
-                    onClick={handlePreviousMonth}
-                >
-                    {getMonthYear(getPreviousMonth(today))}
-                </a>
-                <a href="#" className="text-3xl underline">
-                    {getMonthYear(today)}
-                </a>
-                <a
-                    href="#"
-                    className="text-xl hover:underline"
-                    onClick={handleNextMonth}
-                >
-                    {getMonthYear(getNextMonth(today))}
-                </a>
-            </div>
-            <div className="grid grid-cols-7 grid-rows-6 gap-3 w-2/5 mx-auto mt-8">
-                <CalendarDateButton content="M" isDay={false}/>
-                <CalendarDateButton content="T" isDay={false}/>
-                <CalendarDateButton content="W" isDay={false}/>
-                <CalendarDateButton content="T" isDay={false}/>
-                <CalendarDateButton content="F" isDay={false}/>
-                <CalendarDateButton content="S" isDay={false}/>
-                <CalendarDateButton content="S" isDay={false}/>
+            <div>
+                <div className="p-2 px-6">
+                    <Tabs variant="bordered" size="md" className="w-full">
+                        <Tabs.Tab onClick={handlePreviousMonth}>
+                            {getMonthYear(getPreviousMonth(today))}
+                        </Tabs.Tab>
+                        <Tabs.Tab active={true}>
+                            {getMonthYear(today)}
+                        </Tabs.Tab>
+                        <Tabs.Tab onClick={handleNextMonth}>
+                            {getMonthYear(getNextMonth(today))}
+                        </Tabs.Tab>
+                    </Tabs>
+                    <div className="grid grid-cols-7 grid-rows-6 gap-3 mx-auto mt-8">
+                        <CalendarDateButton content="M" isDay={false}/>
+                        <CalendarDateButton content="T" isDay={false}/>
+                        <CalendarDateButton content="W" isDay={false}/>
+                        <CalendarDateButton content="T" isDay={false}/>
+                        <CalendarDateButton content="F" isDay={false}/>
+                        <CalendarDateButton content="S" isDay={false}/>
+                        <CalendarDateButton content="S" isDay={false}/>
 
-                {days.map((day, idx) => {
-                    return day == null ? (
-                        <CalendarDateButton
-                            key={day + "_" + idx}
-                            content=""
-                            isDay={true}
-                        />
-                    ) : (
-                        <CalendarDateButton
-                            key={day.getDay() + "_" + idx}
-                            content={day.getDate()}
-                        />
-                    );
-                })}
+                        {days.map((day, idx) => {
+                            return day == null ? (
+                                <CalendarDateButton
+                                    key={day + "_" + idx}
+                                    content=""
+                                    isDay={true}
+                                />
+                            ) : (
+                                <CalendarDateButton
+                                    key={day.getDay() + "_" + idx}
+                                    content={day.getDate()}
+                                />
+                            );
+                        })}
+                    </div>
+                    <Divider/>
+                </div>
+                <Menu>
+                    <QuickGroupList/>
+                    <NavLink to={"/events/add"}>
+                        <Button color="accent" fullWidth={true}>
+                            <PlusIcon className="w-4 h-4 mr-1 stroke-current"/> Create event
+                        </Button>
+                    </NavLink>
+                </Menu>
             </div>
-            </div>
-            <Menu>
-                <QuickGroupList/>
-                <NavLink to={"/events/add"}>
-                    <Button color="accent" fullWidth={true}>
-                        <PlusIcon className="w-4 h-4 mr-1 stroke-current" /> Create event
-                    </Button>
-                </NavLink>
-            </Menu>
         </Layout>
     );
 };
@@ -139,7 +136,7 @@ function getDaysInMonth(date: Date): number {
 }
 
 function getMonthYear(date: Date): string {
-    const month = date.toLocaleString("en-Us", { month: "long" });
+    const month = date.toLocaleString("en-Us", {month: "long"});
     return (
         month.charAt(0).toLocaleUpperCase() +
         month.slice(1) +

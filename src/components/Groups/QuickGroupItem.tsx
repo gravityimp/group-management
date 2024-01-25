@@ -1,6 +1,6 @@
-import { Badge, Menu } from "react-daisyui";
 import {FunctionComponent} from "react";
 import {NavLink} from "react-router-dom";
+import { Badge, Menu } from "react-daisyui";
 
 const QuickGroupStyle= `
     flex

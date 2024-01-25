@@ -1,9 +1,11 @@
-import {Badge, Button, Divider, Dropdown, Menu, Navbar} from "react-daisyui";
 import {NavLink} from "react-router-dom";
+import {Badge, Button, Divider, Dropdown, Menu, Navbar} from "react-daisyui";
 import groups from "../../data/groups.json"
 
-const Header = () => (
-    <Navbar className="navbar bg-base-300">
+const Header = () => {
+    const isLogged = localStorage.getItem("isLogged");
+
+    return <Navbar className="navbar bg-base-300">
         <Navbar.Start>
             <Dropdown>
                 <Button tag="label" color="ghost" tabIndex={0} className="lg:hidden">
@@ -53,6 +55,10 @@ const Header = () => (
             </Menu>
         </Navbar.Center>
         <Navbar.End>
+            {!isLogged ? <Menu horizontal className="px-1">
+                <Menu.Item><NavLink to={"/register"}>Register</NavLink></Menu.Item>
+                <Menu.Item><NavLink to={"/login"}>Login</NavLink></Menu.Item>
+            </Menu> :
             <Dropdown end>
                 <Button tag="label" tabIndex={0} color="ghost" className="avatar" shape="circle">
                     <div className="w-10 rounded-full">
@@ -69,9 +75,9 @@ const Header = () => (
                     <Dropdown.Item><NavLink to={"/settings"}>Settings</NavLink></Dropdown.Item>
                     <Dropdown.Item><NavLink to={"/logout"}>Logout</NavLink></Dropdown.Item>
                 </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown>}
         </Navbar.End>
     </Navbar>
-)
+}
 
 export default Header;

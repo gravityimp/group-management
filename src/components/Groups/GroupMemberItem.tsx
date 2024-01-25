@@ -1,5 +1,5 @@
-import {Avatar, Card} from "react-daisyui";
 import {FunctionComponent} from "react";
+import {Avatar, Card} from "react-daisyui";
 
 interface QuickGroupProps {
     id: number

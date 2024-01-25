@@ -1,6 +1,6 @@
 import {FunctionComponent} from "react";
-import {Button, Card} from "react-daisyui";
 import {NavLink} from "react-router-dom";
+import {Button, Card} from "react-daisyui";
 
 interface GroupProps {
     id: number,
@@ -18,29 +18,29 @@ const Group: FunctionComponent<GroupProps> = (props) => {
                 <Card.Title className="justify-center mb-4">{title}</Card.Title>
                 {isMember ? (
                     <Card.Actions className="grid grid-cols-2 gap-2 w-full justify-self-end">
-                        <Button fullWidth={true} color="primary">
-                            <NavLink to={`/groups/${id}`}>
+                        <NavLink to={`/groups/${id}`} className="w-full">
+                            <Button fullWidth={true} color="primary">
                                 View
-                            </NavLink>
-                        </Button>
+                            </Button>
+                        </NavLink>
                         {isAdmin ?
-                            <Button fullWidth={true} color="neutral">
-                                <NavLink to={`/groups/${id}`}>
+                            <NavLink to={`/groups/${id}`} className="w-full">
+                                <Button fullWidth={true} color="neutral">
                                     Manage
-                                </NavLink>
-                            </Button> :
-                            <Button fullWidth={true} color="error">
-                                <NavLink to={`/groups/${id}`}>
+                                </Button>
+                            </NavLink> :
+                            <NavLink to={`/groups/${id}`} className="w-full">
+                                <Button fullWidth={true} color="error">
                                     Leave
-                                </NavLink>
-                            </Button>}
+                                </Button>
+                            </NavLink>}
                     </Card.Actions>
                 ) : <Card.Actions className="justify-self-end">
+                    <NavLink to={`/groups/${id}`} className="w-full">
                         <Button fullWidth={true} color="neutral">
-                            <NavLink to={`/groups/${id}`}>
                                 Join
-                            </NavLink>
                         </Button>
+                    </NavLink>
                     </Card.Actions>}
             </Card.Body>
         </Card>

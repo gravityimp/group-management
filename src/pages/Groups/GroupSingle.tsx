@@ -3,8 +3,8 @@ import {Breadcrumbs, Button, Menu} from "react-daisyui";
 import {HomeIcon,  PlusIcon, UserGroupIcon, UserIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
-import groups from "../../data/groups.json"
 import GroupMemberItem from "../../components/Groups/GroupMemberItem.tsx";
+import groups from "../../data/groups.json"
 
 const Groups = () => {
     const navigate = useNavigate()
