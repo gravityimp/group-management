@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
-import {Breadcrumbs, Button, Menu, Select, Toggle} from "react-daisyui";
+import {Breadcrumbs, Button, Divider, Menu, Select, Toggle} from "react-daisyui";
 import {Cog6ToothIcon, HomeIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
 
@@ -34,10 +34,20 @@ const Settings = () => {
                     </div>
                     <div className="prose my-2 col-span-full"><h2 id="notifications">Notifications</h2></div>
                     <div>
-                        <div className="prose">
+                        <div className="prose mb-4">
                             <h3 id="sound">Sound Notifications</h3>
                             <p>You will be notified in-app with sound when:</p>
                         </div>
+                        <div className="flex flex-row content-center gap-3">
+                            <Toggle
+                                className="self-center"
+                                color="primary"
+                                size="sm"
+                                defaultChecked
+                            />
+                            <span className="text-lg">All</span>
+                        </div>
+                        <Divider />
                         <div className="flex flex-row content-center gap-3">
                             <Toggle
                                 className="self-center"
@@ -67,10 +77,20 @@ const Settings = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="prose">
+                        <div className="prose mb-4">
                             <h3 id="email">E-mail Notifications</h3>
                             <p>You will get email when any of the these happens:</p>
                         </div>
+                        <div className="flex flex-row content-center gap-3">
+                            <Toggle
+                                className="self-center"
+                                color="primary"
+                                size="sm"
+                                defaultChecked
+                            />
+                            <span className="text-lg">All</span>
+                        </div>
+                        <Divider/>
                         <div className="flex flex-row content-center gap-3">
                             <Toggle
                                 className="self-center"

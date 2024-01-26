@@ -48,14 +48,14 @@ const NoteSingle = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4 mb-4">
                     {note.attachments.map((file) => (
-                        <Card key={file.id}>
+                        <Card key={file.id} className="border-neutral border-s-primary border-2">
                             <Card.Body className="flex-row items-center">
                                 <DocumentIcon className="w-8 h-8 mr-2 stroke-current"/>
                                 <Card.Title tag="h3">{file.name}</Card.Title>
                             </Card.Body>
                         </Card>
                     ))}
-                    <Card className="border-dashed">
+                    <Card className="border-dashed border-accent border-2">
                         <Card.Body className="flex-columm items-center">
                             <PlusIcon className="w-8 h-8 mr-2 stroke-current"/>
                             <Card.Title tag="h3">Drop your files here</Card.Title>
