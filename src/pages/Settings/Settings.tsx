@@ -1,12 +1,17 @@
-import {useState} from "react";
-import {NavLink} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Breadcrumbs, Button, Divider, Menu, Select, Toggle} from "react-daisyui";
 import {Cog6ToothIcon, HomeIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
 
 const Settings = () => {
-
     const [theme, setTheme] = useState<string>('Dark');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
 
     return (
         <Layout>

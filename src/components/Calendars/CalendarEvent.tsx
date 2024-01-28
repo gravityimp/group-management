@@ -20,7 +20,7 @@ const CalendarEvent: FunctionComponent<CalendarEventProps> = (props) => {
             <div className="my-2 flex gap-2">
                 {eventType === "tasks" ? (
                         !done ?
-                            <NavLink to={`/${eventType}/${eventId}`}>
+                            <NavLink to={`/${eventType}/${eventId}/mark`}>
                                 <Button color="accent">
                                     Mark as Done
                                 </Button>

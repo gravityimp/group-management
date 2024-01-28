@@ -1,12 +1,20 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Breadcrumbs, Button, Input, Join, Menu} from "react-daisyui";
 import {FolderOpenIcon, HomeIcon, MagnifyingGlassIcon, PlusIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
 import Task from "../../components/Tasks/Task";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
 import tasks from "../../data/tasks.json"
+import {useEffect} from "react";
 
 const Groups = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     return (
         <Layout>
             <div>
@@ -26,7 +34,8 @@ const Groups = () => {
                 <Join className="w-full pb-4">
                     <div className="w-full">
                         <div className="w-full">
-                            <Input className="join-item w-full" placeholder="Search..."/>
+                            <label htmlFor="search" className="sr-only">Search</label>
+                            <Input id="search" className="join-item w-full" placeholder="Search..."/>
                         </div>
                     </div>
                     <Button className="join-item">

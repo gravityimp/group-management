@@ -5,9 +5,16 @@ import Layout from "../../components/Layout/Layout.tsx";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
 import GroupMemberItem from "../../components/Groups/GroupMemberItem.tsx";
 import groups from "../../data/groups.json"
+import {useEffect} from "react";
 
 const Groups = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const { id } = useParams();
     let numericId: number;
     if (isNaN(Number(id))) {
@@ -34,7 +41,7 @@ const Groups = () => {
                         </NavLink>
                     </Breadcrumbs.Item>
                     <Breadcrumbs.Item>
-                        <NavLink to={"/groups"}>
+                        <NavLink to={`/groups/${id}`}>
                             <UserIcon className="w-4 h-4 mr-2 stroke-current" /> {group.shortName}
                         </NavLink>
                     </Breadcrumbs.Item>

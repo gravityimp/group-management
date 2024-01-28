@@ -7,8 +7,16 @@ import {
     XCircleIcon
 } from "@heroicons/react/24/outline";
 import Layout from '../../components/Layout/Layout.tsx';
+import {useEffect} from "react";
 
 const EditProfile = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const schema = yup.object().shape({
         displayName: yup.string()
             .max(64)
@@ -33,9 +41,7 @@ const EditProfile = () => {
             .required()
     });
 
-    const navigate = useNavigate()
     const error = <XCircleIcon className="w-4 h-4 mr-2 stroke-current"/>
-
     const formik = useFormik({
         initialValues: {
             displayName: "",
@@ -51,7 +57,7 @@ const EditProfile = () => {
     });
 
     return (
-        <Layout className="lg:grid-cols-1">
+        <Layout className="lg:grid-cols-[1fr]">
             <div>
                 <Breadcrumbs>
                     <Breadcrumbs.Item>

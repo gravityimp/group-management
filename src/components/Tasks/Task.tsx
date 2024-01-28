@@ -22,7 +22,7 @@ const Task: FunctionComponent<TaskProps> = (props) => {
                                 View
                             </Button>
                         </NavLink>
-                        <NavLink to={`/tasks/${id}`} className="w-full">
+                        <NavLink to={`/tasks/${id}/mark`} className="w-full">
                             <Button fullWidth={true} color="accent">
                                 Mark as Done
                             </Button>

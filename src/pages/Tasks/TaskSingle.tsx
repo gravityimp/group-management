@@ -4,9 +4,16 @@ import {DocumentIcon, FolderOpenIcon, HomeIcon, PlusIcon} from "@heroicons/react
 import Layout from "../../components/Layout/Layout.tsx";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
 import tasks from "../../data/tasks.json";
+import {useEffect} from "react";
 
 const TaskSingle = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const { id } = useParams();
     let numericId: number;
     if (isNaN(Number(id))) {
@@ -33,7 +40,7 @@ const TaskSingle = () => {
                         </NavLink>
                     </Breadcrumbs.Item>
                     <Breadcrumbs.Item>
-                        <NavLink to={"/tasks"}>
+                        <NavLink to={`/tasks/${id}`}>
                             <DocumentIcon className="w-4 h-4 mr-2 stroke-current"/> {task.shortName}
                         </NavLink>
                     </Breadcrumbs.Item>
@@ -41,10 +48,16 @@ const TaskSingle = () => {
                 <div className="prose mt-4 mb-8 max-w-full">
                     <div className="grid grid-cols-[1fr_8rem]">
                         <h1>{task.longName}</h1>
-                        <Button className="w-32">Done</Button>
+                        {task.done ?
+                            <Button className="w-32">Done</Button> :
+                            <NavLink to={`/tasks/${id}/mark`} className="w-full">
+                                <Button className="w-32" color="accent">
+                                    Mark as Done
+                                </Button>
+                            </NavLink>}
                     </div>
                     {task.subjects.map((subject) => (
-                        <Badge color="accent" className="mr-2">{subject}</Badge>
+                        <Badge key={subject} color="accent" className="mr-2">{subject}</Badge>
                     ))}
                     <Badge color="secondary" className="mr-2">{task.due}</Badge>
                     <p>{task.description}</p>
@@ -64,7 +77,7 @@ const TaskSingle = () => {
                             <PlusIcon className="w-8 h-8 mr-2 stroke-current"/>
                             <Card.Title tag="h3">Drop your files here</Card.Title>
                             <p>or <span
-                                className="text-xs text-sky-700 hover:underline hover:cursor-pointer text-center">
+                                className="text-xs text-accent hover:underline hover:cursor-pointer text-center">
                                 Choose files from computer
                             </span></p>
                         </Card.Body>

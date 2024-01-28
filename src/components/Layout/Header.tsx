@@ -8,10 +8,11 @@ const Header = () => {
     return <Navbar className="navbar bg-base-300">
         <Navbar.Start>
             <Dropdown>
-                <Button tag="label" color="ghost" tabIndex={0} className="lg:hidden">
+                <Button color="ghost" tabIndex={0} className="lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16"/>
+                        <span className="sr-only">Menu</span>
                     </svg>
                 </Button>
                 <Dropdown.Menu tabIndex={0} className="w-52 menu-sm mt-3 z-[1]">
@@ -60,9 +61,10 @@ const Header = () => {
                 <Menu.Item><NavLink to={"/login"}>Login</NavLink></Menu.Item>
             </Menu> :
             <Dropdown end>
-                <Button tag="label" tabIndex={0} color="ghost" className="avatar" shape="circle">
+                <Button tabIndex={0} color="ghost" className="avatar" shape="circle">
                     <div className="w-10 rounded-full">
-                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="user avatar"/>
+                        <span className="sr-only">user</span>
                     </div>
                 </Button>
                 <Dropdown.Menu className="mt-3 z-[1] w-52 menu-sm">

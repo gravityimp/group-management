@@ -51,20 +51,21 @@ const Registration = () => {
     });
 
     return (
-        <Layout className="lg:grid-cols-1">
+        <Layout className="lg:grid-cols-[1fr]">
             <Card side="lg" className="shadow-xl bg-base-200">
-                <Card.Body className="lg:basis-4/6 lg:shrink-0">
-                    <Card.Title tag="h2">Create new account</Card.Title>
+                <Card.Body>
+                    <Card.Title tag="h1">Create new account</Card.Title>
                     <form onSubmit={formik.handleSubmit}
                           className="min-w-full items-center justify-center gap-2">
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="displayName" className="label">
                                 <span className="label-text">Display name</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Display Name"
                                 name="displayName"
+                                id="displayName"
                                 value={formik.values.displayName}
                                 onChange={formik.handleChange}
                                 className={`input input-bordered ${formik.errors.displayName ? "input-error" : ""}`}
@@ -73,13 +74,14 @@ const Registration = () => {
                                 <Alert status="error" icon={error} className="mt-2"><span>{formik.errors.displayName}</span></Alert>}
                         </div>
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="username" className="label">
                                 <span className="label-text">Username</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Username"
                                 name="username"
+                                id="username"
                                 value={formik.values.username}
                                 onChange={formik.handleChange}
                                 className={`input input-bordered ${formik.errors.username ? "input-error" : ""}`}
@@ -88,13 +90,14 @@ const Registration = () => {
                                 <Alert status="error" icon={error} className="mt-2"><span>{formik.errors.username}</span></Alert>}
                         </div>
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="email" className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Email"
                                 name="email"
+                                id="email"
                                 value={formik.values.email}
                                 onChange={formik.handleChange}
                                 className={`input input-bordered ${formik.errors.email ? "input-error" : ""}`}
@@ -103,13 +106,14 @@ const Registration = () => {
                                 <Alert status="error" icon={error} className="mt-2"><span>{formik.errors.email}</span></Alert>}
                         </div>
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="password" className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Password"
                                 name="password"
+                                id="password"
                                 value={formik.values.password}
                                 onChange={formik.handleChange}
                                 className={`input input-bordered ${formik.errors.password ? "input-error" : ""}`}
@@ -118,13 +122,14 @@ const Registration = () => {
                                 <Alert status="error" icon={error} className="mt-2"><span>{formik.errors.password}</span></Alert>}
                         </div>
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="retypedPassword" className="label">
                                 <span className="label-text">Retype password</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Password"
                                 name="retypedPassword"
+                                id="retypedPassword"
                                 value={formik.values.retypedPassword}
                                 onChange={formik.handleChange}
                                 className={`input input-bordered ${formik.errors.retypedPassword ? "input-error" : ""}`}

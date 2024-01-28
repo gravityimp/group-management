@@ -4,9 +4,16 @@ import {DocumentIcon, FolderOpenIcon, HomeIcon, PlusIcon} from "@heroicons/react
 import Layout from "../../components/Layout/Layout.tsx";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
 import notes from "../../data/notes.json";
+import {useEffect} from "react";
 
 const NoteSingle = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const { id } = useParams();
     let numericId: number;
     if (isNaN(Number(id))) {
@@ -33,7 +40,7 @@ const NoteSingle = () => {
                         </NavLink>
                     </Breadcrumbs.Item>
                     <Breadcrumbs.Item>
-                        <NavLink to={"/tasks"}>
+                        <NavLink to={`/notes/${id}`}>
                             <DocumentIcon className="w-4 h-4 mr-2 stroke-current"/> {note.shortName}
                         </NavLink>
                     </Breadcrumbs.Item>
@@ -41,7 +48,7 @@ const NoteSingle = () => {
                 <div className="prose mt-4 mb-8 max-w-full">
                     <h1>{note.longName}</h1>
                     {note.subjects.map((subject) => (
-                        <Badge color="accent" className="mr-2">{subject}</Badge>
+                        <Badge key={subject} color="accent" className="mr-2">{subject}</Badge>
                     ))}
                     <p>{note.description}</p>
                     <h2>Files</h2>
@@ -60,7 +67,7 @@ const NoteSingle = () => {
                             <PlusIcon className="w-8 h-8 mr-2 stroke-current"/>
                             <Card.Title tag="h3">Drop your files here</Card.Title>
                             <p>or <span
-                                className="text-xs text-sky-700 hover:underline hover:cursor-pointer text-center">
+                                className="text-xs text-accent hover:underline hover:cursor-pointer text-center">
                                 Choose files from computer
                             </span></p>
                         </Card.Body>

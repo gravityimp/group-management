@@ -11,8 +11,16 @@ import {
 } from "@heroicons/react/24/outline";
 import Layout from '../../components/Layout/Layout.tsx';
 import groups from "../../data/groups.json";
+import {useEffect} from "react";
 
 const AddEvent = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const schema = yup.object().shape({
         shortName: yup.string()
             .max(32)
@@ -30,9 +38,7 @@ const AddEvent = () => {
             .required()
     });
 
-    const navigate = useNavigate()
     const error = <XCircleIcon className="w-4 h-4 mr-2 stroke-current"/>
-
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -49,7 +55,7 @@ const AddEvent = () => {
     });
 
     return (
-        <Layout className="lg:grid-cols-1">
+        <Layout className="lg:grid-cols-[1fr]">
             <div>
                 <Breadcrumbs>
                     <Breadcrumbs.Item>
@@ -73,12 +79,14 @@ const AddEvent = () => {
                       className="min-w-full items-center justify-center gap-2">
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="group" className="label">
                             <span className="label-text">Group</span>
                         </label>
                         <select
                             value={formik.values.group}
                             onChange={formik.handleChange}
+                            name="group"
+                            id="group"
                             className="select select-bordered"
                         >
                             <option value={"0"} disabled>
@@ -91,13 +99,14 @@ const AddEvent = () => {
                     </div>
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="name" className="label">
                             <span className="label-text">Name</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Name"
                             name="name"
+                            id="name"
                             value={formik.values.name}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.name ? "input-error" : ""}`}
@@ -108,29 +117,34 @@ const AddEvent = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="type" className="label">
                                 <span className="label-text">Type</span>
                             </label>
-                            <input
-                                type="text"
-                                placeholder="Type"
-                                name="type"
-                                value={formik.values.type}
+
+                            <select
+                                value={formik.values.group}
                                 onChange={formik.handleChange}
-                                className={`input input-bordered ${formik.errors.type ? "input-error" : ""}`}
-                            />
-                            {formik.errors.type &&
-                                <Alert status="error" icon={error}
-                                       className="mt-2"><span>{formik.errors.type}</span></Alert>}
+                                name="type"
+                                id="type"
+                                className="select select-bordered"
+                            >
+                                <option value="none" disabled>
+                                    Pick event type
+                                </option>
+                                <option value="subject">Subject</option>
+                                <option value="task">Task</option>
+                                <option value="day-off">Day off</option>
+                            </select>
                         </div>
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="id" className="label">
                                 <span className="label-text">Id</span>
                             </label>
                             <input
                                 type="number"
                                 placeholder="Id"
                                 name="id"
+                                id="id"
                                 value={formik.values.id}
                                 onChange={formik.handleChange}
                                 className={`input input-bordered ${formik.errors.id ? "input-error" : ""}`}
@@ -141,13 +155,14 @@ const AddEvent = () => {
                         </div>
                     </div>
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="time" className="label">
                             <span className="label-text">Time</span>
                         </label>
                         <input
                             type="time"
                             placeholder="Time"
                             name="time"
+                            id="time"
                             value={formik.values.time}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.time ? "input-error" : ""}`}
@@ -157,13 +172,14 @@ const AddEvent = () => {
                                    className="mt-2"><span>{formik.errors.time}</span></Alert>}
                     </div>
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
-                            <span className="label-text">Due</span>
+                        <label htmlFor="date" className="label">
+                            <span className="label-text">Date</span>
                         </label>
                         <input
                             type="date"
                             placeholder="Date"
                             name="date"
+                            id="date"
                             value={formik.values.date}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.date ? "input-error" : ""}`}

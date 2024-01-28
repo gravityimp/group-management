@@ -18,33 +18,35 @@ const Login = () => {
     });
 
     return (
-        <Layout className="lg:grid-cols-1">
-            <Card side="lg" className="shadow-xl bg-base-200">
-                <Card.Body className="lg:basis-4/6 lg:shrink-0">
-                    <Card.Title tag="h2">Login to your account</Card.Title>
+        <Layout className="lg:grid-cols-[1fr]">
+            <Card className="shadow-xl bg-base-200">
+                <Card.Body>
+                    <Card.Title tag="h1">Login to your account</Card.Title>
                     <form onSubmit={formik.handleSubmit}
                           className="min-w-full items-center justify-center gap-2">
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
+                            <label htmlFor="username" className="label">
                                 <span className="label-text">Username</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Username"
                                 name="username"
+                                id="username"
                                 value={formik.values.username}
                                 onChange={formik.handleChange}
                                 className="input input-bordered"
                             />
                         </div>
                         <div className="form-control w-full max-w-s">
-                            <label className="label">
-                                <span className="label-text">Email</span>
+                            <label htmlFor="password" className="label">
+                                <span className="label-text">Password</span>
                             </label>
                             <input
                                 type="password"
                                 placeholder="Password"
                                 name="password"
+                                id="password"
                                 value={formik.values.password}
                                 onChange={formik.handleChange}
                                 className="input input-bordered"

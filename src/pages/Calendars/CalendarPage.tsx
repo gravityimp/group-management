@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Breadcrumbs, Button, Divider, Menu, Tabs, Timeline} from "react-daisyui";
 import {CalendarIcon, HomeIcon, PlusIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
@@ -9,6 +9,13 @@ import CalendarEvent from "../../components/Calendars/CalendarEvent.tsx";
 import events from "../../data/events.json"
 
 const CalendarPage = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const [today, setToday] = useState<Date>(new Date());
     const [days, setDays] = useState<any[]>([]);
 

@@ -10,8 +10,16 @@ import {
 } from "@heroicons/react/24/outline";
 import Layout from '../../components/Layout/Layout.tsx';
 import groups from "../../data/groups.json";
+import {useEffect} from "react";
 
 const AddNote = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const schema = yup.object().shape({
         shortName: yup.string()
             .max(32)
@@ -24,9 +32,7 @@ const AddNote = () => {
             .required()
     });
 
-    const navigate = useNavigate()
     const error = <XCircleIcon className="w-4 h-4 mr-2 stroke-current"/>
-
     const formik = useFormik({
         initialValues: {
             shortName: "",
@@ -43,7 +49,7 @@ const AddNote = () => {
     });
 
     return (
-        <Layout className="lg:grid-cols-1">
+        <Layout className="lg:grid-cols-[1fr]">
             <div>
                 <Breadcrumbs>
                     <Breadcrumbs.Item>
@@ -67,12 +73,14 @@ const AddNote = () => {
                       className="min-w-full items-center justify-center gap-2">
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="group" className="label">
                             <span className="label-text">Group</span>
                         </label>
                         <select
                             value={formik.values.group}
                             onChange={formik.handleChange}
+                            name="group"
+                            id="group"
                             className="select select-bordered"
                         >
                             <option value={"0"} disabled>
@@ -85,13 +93,14 @@ const AddNote = () => {
                     </div>
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="subjects" className="label">
                             <span className="label-text">Subjects</span>
                         </label>
                         <input
                             type="text"
                             placeholder="List of subjects, separated by comma"
                             name="subjects"
+                            id="subjects"
                             value={formik.values.subjects}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.subjects ? "input-error" : ""}`}
@@ -102,13 +111,14 @@ const AddNote = () => {
                     </div>
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="shortName" className="label">
                             <span className="label-text">Short name</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Short Name"
                             name="shortName"
+                            id="shortName"
                             value={formik.values.shortName}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.shortName ? "input-error" : ""}`}
@@ -118,13 +128,14 @@ const AddNote = () => {
                                    className="mt-2"><span>{formik.errors.shortName}</span></Alert>}
                     </div>
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="longName" className="label">
                             <span className="label-text">Long name</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Long Name"
                             name="longName"
+                            id="longName"
                             value={formik.values.longName}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.longName ? "input-error" : ""}`}
@@ -135,11 +146,12 @@ const AddNote = () => {
                     </div>
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="description" className="label">
                             <span className="label-text">Description</span>
                         </label>
                         <textarea
                             name="description"
+                            id="description"
                             value={formik.values.description}
                             onChange={formik.handleChange}
                             className={`textarea textarea-bordered h-40 ${formik.errors.description ? "textarea-error" : ""}`}

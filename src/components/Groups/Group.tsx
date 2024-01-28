@@ -24,21 +24,19 @@ const Group: FunctionComponent<GroupProps> = (props) => {
                             </Button>
                         </NavLink>
                         {isAdmin ?
-                            <NavLink to={`/groups/${id}`} className="w-full">
+                            <NavLink to={`/groups/${id}/manage`} className="w-full">
                                 <Button fullWidth={true} color="neutral">
                                     Manage
                                 </Button>
                             </NavLink> :
-                            <NavLink to={`/groups/${id}`} className="w-full">
-                                <Button fullWidth={true} color="error">
-                                    Leave
-                                </Button>
-                            </NavLink>}
+                            <Button fullWidth={true} color="error">
+                                Leave
+                            </Button>}
                     </Card.Actions>
                 ) : <Card.Actions className="justify-self-end">
-                    <NavLink to={`/groups/${id}`} className="w-full">
+                    <NavLink to={`/groups/${id}/join`} className="w-full">
                         <Button fullWidth={true} color="neutral">
-                                Join
+                            Join
                         </Button>
                     </NavLink>
                     </Card.Actions>}

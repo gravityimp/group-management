@@ -1,12 +1,20 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Breadcrumbs, Button, Input, Join, Menu} from "react-daisyui";
 import {HomeIcon, MagnifyingGlassIcon, PlusIcon, UserGroupIcon} from "@heroicons/react/24/outline";
 import Layout from "../../components/Layout/Layout.tsx";
 import Group from "../../components/Groups/Group";
 import QuickGroupList from "../../components/Groups/QuickGroupList.tsx";
 import groups from "../../data/groups.json"
+import {useEffect} from "react";
 
 const Groups = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     return (
         <Layout>
             <div>
@@ -26,11 +34,12 @@ const Groups = () => {
                 <Join className="w-full pb-4">
                     <div className="w-full">
                         <div className="w-full">
-                            <Input className="join-item w-full" placeholder="Search..."/>
+                            <label htmlFor="search" className="sr-only">Search</label>
+                            <Input id="search" className="join-item w-full" placeholder="Search..."/>
                         </div>
                     </div>
                     <Button className="join-item">
-                        <MagnifyingGlassIcon className="w-4 h-4 mr-1 stroke-current" /> Search
+                        <MagnifyingGlassIcon className="w-4 h-4 mr-1 stroke-current"/> Search
                     </Button>
                 </Join>
                 <div className="grid grid-cols-3 gap-4">

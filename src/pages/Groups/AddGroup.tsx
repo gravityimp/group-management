@@ -8,8 +8,16 @@ import {
     XCircleIcon
 } from "@heroicons/react/24/outline";
 import Layout from '../../components/Layout/Layout.tsx';
+import {useEffect} from "react";
 
 const AddGroup = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     const schema = yup.object().shape({
         shortName: yup.string()
             .max(32)
@@ -24,9 +32,7 @@ const AddGroup = () => {
             .required()
     });
 
-    const navigate = useNavigate()
     const error = <XCircleIcon className="w-4 h-4 mr-2 stroke-current"/>
-
     const formik = useFormik({
         initialValues: {
             shortName: "",
@@ -40,7 +46,7 @@ const AddGroup = () => {
     });
 
     return (
-        <Layout className="lg:grid-cols-1">
+        <Layout className="lg:grid-cols-[1fr]">
             <div>
                 <Breadcrumbs>
                     <Breadcrumbs.Item>
@@ -64,13 +70,14 @@ const AddGroup = () => {
                       className="min-w-full items-center justify-center gap-2">
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="shortName" className="label">
                             <span className="label-text">Short name</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Short Name"
                             name="shortName"
+                            id="shortName"
                             value={formik.values.shortName}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.shortName ? "input-error" : ""}`}
@@ -80,13 +87,14 @@ const AddGroup = () => {
                                    className="mt-2"><span>{formik.errors.shortName}</span></Alert>}
                     </div>
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="longName" className="label">
                             <span className="label-text">Long name</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Long Name"
                             name="longName"
+                            id="longName"
                             value={formik.values.longName}
                             onChange={formik.handleChange}
                             className={`input input-bordered ${formik.errors.longName ? "input-error" : ""}`}
@@ -97,11 +105,12 @@ const AddGroup = () => {
                     </div>
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="description" className="label">
                             <span className="label-text">Description</span>
                         </label>
                         <textarea
                             name="description"
+                            id="description"
                             value={formik.values.description}
                             onChange={formik.handleChange}
                             className={`textarea textarea-bordered h-40 ${formik.errors.description ? "textarea-error" : ""}`}
@@ -112,10 +121,10 @@ const AddGroup = () => {
                     </div>
 
                     <div className="form-control w-full max-w-s">
-                        <label className="label">
+                        <label htmlFor="files" className="label">
                             <span className="label-text">Files</span>
                         </label>
-                        <FileInput bordered={true} size="md" />
+                        <FileInput bordered={true} size="md" id="files" />
                     </div>
 
                     <Button fullWidth={true} type="submit" color="primary" className="my-8">

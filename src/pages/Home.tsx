@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Breadcrumbs, Button, Hero, Timeline} from "react-daisyui";
 import {HomeIcon} from "@heroicons/react/24/outline";
 import Layout from "../components/Layout/Layout.tsx";
@@ -6,10 +6,18 @@ import Group from "../components/Groups/Group";
 import CalendarEvent from "../components/Calendars/CalendarEvent.tsx";
 import groups from "../data/groups.json"
 import events from "../data/events.json"
+import {useEffect} from "react";
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("isLogged") != "yes")
+            navigate("/login");
+    }, []);
+
     return (
-        <Layout className="lg:grid-cols-1">
+        <Layout className="lg:grid-cols-[1fr]">
             <Breadcrumbs>
                 <Breadcrumbs.Item>
                     <NavLink to={"/"}>
